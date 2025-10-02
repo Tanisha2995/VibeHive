@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeHive - My Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white">
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-purple-700">VibeHive</h1>
+    <nav class="space-x-6 text-gray-600">
+      <a href="index.html" class="hover:text-purple-700">Home</a>
+      <a href="explore.html" class="hover:text-purple-700">Explore</a>
+      <a href="profile.html" class="hover:text-purple-700 font-bold">My Events</a>
+      <a href="profile.html" class="hover:text-purple-700">Profile</a>
+    </nav>
+    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700">Logout</button>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="px-6 py-12 max-w-3xl mx-auto text-center">
+    <img src="https://source.unsplash.com/150x150/?person,portrait" alt="profile" class="w-28 h-28 rounded-full mx-auto shadow-md">
+    <h2 class="text-3xl font-extrabold text-purple-800 mt-4">Kaira Kashyap</h2>
+    <p class="text-gray-600">💜 Loves Music, Food & Meeting New People</p>
+  </section>
+
+  <!-- My Events -->
+  <section class="px-6 py-10 max-w-4xl mx-auto">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-6">My Upcoming Events</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="event.html" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?dance,party" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-lg">Dance & Chill Night</h4>
+          <p class="text-gray-600 text-sm mt-1">Fri, 9 PM • Club Vibe</p>
+        </div>
+      </a>
+      <a href="event.html" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?gallery,art" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-lg">Gallery Walk</h4>
+          <p class="text-gray-600 text-sm mt-1">Sat, 3 PM • City Arts</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-10 py-6 text-center text-gray-600 border-t">
+    <p>© 2025 VibeCheck. Your vibes, your people. 💜</p>
+  </footer>
+</body>
+</html>
