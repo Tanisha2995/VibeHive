@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events – VibeCheck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center bg-white text-gray-800 shadow px-6 py-4">
+    <h1 class="text-2xl font-bold text-purple-600">VibeCheck</h1>
+    <ul class="flex space-x-6">
+      <li><a href="index.html" class="hover:text-purple-500">Home</a></li>
+      <li><a href="explore.html" class="hover:text-purple-500">Explore</a></li>
+      <li><a href="event.html" class="hover:text-purple-500">Events</a></li>
+      <li><a href="profile.html" class="hover:text-purple-500">Profile</a></li>
+      <li><a href="curator.html" class="hover:text-purple-500">AI Curator</a></li>
+    </ul>
+  </nav>
+
+  <!-- Events Section -->
+  <section class="text-center py-16">
+    <h2 class="text-4xl font-bold mb-6">Upcoming Events 🎉</h2>
+    <p class="text-lg mb-10">Browse through the latest events happening near you.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+      <div class="bg-white text-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/400x250/?concert" class="rounded-xl mb-4" alt="Event">
+        <h3 class="text-xl font-semibold mb-2">Live Concert</h3>
+        <p class="text-sm">Join the best music artists live.</p>
+      </div>
+      <div class="bg-white text-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/400x250/?food" class="rounded-xl mb-4" alt="Event">
+        <h3 class="text-xl font-semibold mb-2">Food Festival</h3>
+        <p class="text-sm">Taste the world’s best cuisines.</p>
+      </div>
+      <div class="bg-white text-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/400x250/?art" class="rounded-xl mb-4" alt="Event">
+        <h3 class="text-xl font-semibold mb-2">Art Fair</h3>
+        <p class="text-sm">Explore creativity from local artists.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

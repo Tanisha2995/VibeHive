@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeCheck - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white">
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-purple-700">VibeCheck</h1>
+    <nav class="space-x-6 text-gray-600">
+      <a href="index.html" class="hover:text-purple-700">Home</a>
+      <a href="explore.html" class="hover:text-purple-700">Explore</a>
+      <a href="profile.html" class="hover:text-purple-700">My Events</a>
+      <a href="profile.html" class="hover:text-purple-700">Profile</a>
+    </nav>
+    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700">Login</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 px-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-purple-800">Find Your Perfect Vibe ✨</h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      Discover safe and curated events near you. Meet new people, join fun activities, and vibe your way through life. 
+    </p>
+    <div class="mt-6">
+      <input type="text" placeholder="Search events, vibes, or people..." class="px-4 py-3 rounded-full border w-80 focus:ring-2 focus:ring-purple-500 outline-none shadow-sm">
+      <button class="ml-2 bg-purple-600 text-white px-5 py-3 rounded-full hover:bg-purple-700">Search</button>
+    </div>
+  </section>
+
+  <!-- Event Categories -->
+  <section class="px-6 py-10">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Choose Your Vibe</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <a href="explore.html" class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition">
+        🎶 <h4 class="mt-2 font-bold">Music</h4>
+      </a>
+      <a href="explore.html" class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition">
+        🎨 <h4 class="mt-2 font-bold">Art</h4>
+      </a>
+      <a href="explore.html" class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition">
+        🍔 <h4 class="mt-2 font-bold">Food</h4>
+      </a>
+      <a href="explore.html" class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition">
+        💼 <h4 class="mt-2 font-bold">Networking</h4>
+      </a>
+    </div>
+  </section>
+
+  <!-- Trending Events -->
+  <section class="px-6 py-10 bg-purple-50">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-6">🔥 Trending Near You</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="event.html" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?concert" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-lg">Indie Music Night</h4>
+          <p class="text-gray-600 text-sm mt-1">Sat, 7 PM • Downtown Arena</p>
+        </div>
+      </a>
+      <a href="event.html" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?food,festival" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-lg">Street Food Fest</h4>
+          <p class="text-gray-600 text-sm mt-1">Sun, 5 PM • Riverfront Park</p>
+        </div>
+      </a>
+      <a href="event.html" class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x250/?art,exhibition" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-lg">Modern Art Expo</h4>
+          <p class="text-gray-600 text-sm mt-1">Fri, 4 PM • City Gallery</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-10 py-6 text-center text-gray-600 border-t">
+    <p>© 2025 VibeCheck. Made for the people who love to vibe. 💜</p>
+  </footer>
+</body>
+</html>

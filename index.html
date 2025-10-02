@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeHive – Find Your People</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-600 to-pink-500 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-purple-700">VibeHive</h1>
+      <ul class="flex space-x-8 font-medium">
+        <li><a href="index.html" class="hover:text-purple-600">Home</a></li>
+        <li><a href="explore.html" class="hover:text-purple-600">Explore</a></li>
+        <li><a href="profile.html" class="hover:text-purple-600">Profile</a></li>
+        <li><a href="mood.html" class="hover:text-purple-600">AI Curator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-6 text-white">
+    <h2 class="text-5xl font-bold mb-4">Discover Events That Match Your Vibe ✨</h2>
+    <p class="text-lg mb-8">From music to art, food to nightlife – we curate it all, just for you.</p>
+    <a href="explore.html" class="bg-white text-purple-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-purple-100">
+      Start Exploring
+    </a>
+  </section>
+
+  <!-- Featured Events Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-3xl font-bold text-center mb-10 text-white">🔥 Trending Events</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://source.unsplash.com/400x250/?concert" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-xl mb-2">Indie Music Night</h4>
+          <p class="text-gray-600">Sat, 7 PM • Downtown Arena</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://source.unsplash.com/400x250/?food-festival" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-xl mb-2">Street Food Fest</h4>
+          <p class="text-gray-600">Sun, 5 PM • Riverfront Park</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://source.unsplash.com/400x250/?art" alt="event" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h4 class="font-bold text-xl mb-2">Modern Art Expo</h4>
+          <p class="text-gray-600">Fri, 4 PM • City Gallery</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Mood Curator Section -->
+  <section class="max-w-3xl mx-auto px-6 py-16 text-center rounded-3xl shadow-xl mb-20 bg-white/90">
+    <h3 class="text-3xl font-bold text-purple-800 mb-4">🌈 AI Mood Curator</h3>
+    <p class="mb-6 text-gray-600">Pick your vibe or tell us how you feel — we'll match you with the perfect event.</p>
+    
+    <!-- Input box -->
+    <div class="flex flex-col space-y-4">
+      <input id="moodInput" type="text" placeholder="Enter your mood (optional)..."
+        class="px-6 py-4 rounded-2xl border shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 w-full text-lg">
+      
+      <!-- Quick Select Moods -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <button onclick="setMood('Happy')" class="px-5 py-2 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200">😊 Happy</button>
+        <button onclick="setMood('Tired')" class="px-5 py-2 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200">😴 Tired</button>
+        <button onclick="setMood('Adventurous')" class="px-5 py-2 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200">🌍 Adventurous</button>
+        <button onclick="setMood('Romantic')" class="px-5 py-2 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200">❤️ Romantic</button>
+        <button onclick="setMood('Chill')" class="px-5 py-2 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200">🍹 Chill</button>
+      </div>
+      
+      <!-- Curate button -->
+      <button onclick="getSuggestion()" 
+        class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 text-lg font-semibold w-full">
+        Curate My Vibe ✨
+      </button>
+    </div>
+
+    <!-- Suggestion Output -->
+    <div id="suggestionBox" class="hidden mt-8 bg-purple-50 border border-purple-200 rounded-2xl p-6 shadow-md">
+      <p id="suggestion" class="text-lg text-gray-800 font-medium"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white/80 py-6 text-center text-gray-700 rounded-t-3xl shadow-inner">
+    <p>© 2025 VibeCheck. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Script -->
+  <script>
+    function setMood(mood) {
+      document.getElementById("moodInput").value = mood;
+    }
+
+    function getSuggestion() {
+      const mood = document.getElementById("moodInput").value;
+      fetch("/api/mood", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mood })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("suggestion").innerText = data.suggestion;
+        document.getElementById("suggestionBox").classList.remove("hidden");
+      });
+    }
+  </script>
+</body>
+</html>
